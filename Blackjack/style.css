@@ -1,5 +1,5 @@
 body {
-  background-color: green;
+  background-color: #016f32;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   text-align: center;
@@ -15,3 +15,13 @@ h1 {
   font-style: italic;
 }
 
+button {
+  background-color: goldenrod;
+  border: none;
+  color: #016f32;
+  width: 150px;
+  font-weight: bold;
+  border-radius: 2px;
+  padding: 5px auto;
+  margin-bottom: 5px;
+}
