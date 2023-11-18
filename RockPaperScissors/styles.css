@@ -1,5 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 * {
     box-sizing: border-box;
-    padding: 0;
     margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Press Start 2P';
+    background-image: url(./img/Rock\,\ Paper\,\ Scissors\ Background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* img {
+    width: 200px;
+    height: auto;
+} */
+
+.options button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.button img {
+    width: 8rem;
+    /* height: auto; */
+    size: 5rem;
+}
+
+.header {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    padding: 1rem;
+    color: #2788B8;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.results {
+    font-family: 'Press Start 2P';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.results span {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#credit {
+    display: flex;
+    padding: 26.5px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(144, 140, 162);
+}
+
+#credit img {
+    height: 45px;
+    width: auto;
+}
+
+#reset {
+    text-align: center;
+    padding: 2rem;
+}
+
+button {
+    padding: 1rem;
+    font-family: 'Press Start 2P';
+    border: #000 2px solid;
+    border-radius: 5px;
+}
+
+.score {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
+    position: relative;
+    padding: 2rem;
+}
+
+.floating {
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 15px);
+    }
+
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+
+#player-score {
+    font-size: 2rem;
+}
+
+#computer-score {
+    font-size: 2rem;
+}
+
+.restart {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the retro arcade button */
+#restartButton {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: AracadeFont, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 0 #fff, 0 8px 0 #000;
+}
+
+/* Style for the retro arcade button when it is pressed */
+#restartButton:active {
+    box-shadow: none;
+    background-color: #fff;
+    color: #000;
+    transform: translateY(4px);
+}
+
+#user-title {
+    font-size: 30px;
+}
+
+#computer-title {
+    font-size: 30px;
+}
+
+.button {
+    font-size: 20px;
+    /* background-color: #f0f0f0; */
 }
