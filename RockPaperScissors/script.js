@@ -81,6 +81,7 @@ function playRound(playerChoice) {
         document.getElementById("computer-score").innerHTML = "0";
         document.getElementById("computer-choice").innerHTML = "";
         document.getElementById("player-choice").innerHTML = "";
+        document.getElementById("round-result").innerHTML = "";
         document.getElementById("result").innerHTML = "";
         };
 }
