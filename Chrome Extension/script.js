@@ -1,13 +1,56 @@
-let input = document.getElementById("input-el");
-let text = document.getElementById("input-text");
+let myLeads = [];
+const inputEl = document.getElementById("input-el");
+const inputBtn = document.getElementById("input-btn");
+const deleteBtn = document.getElementById("delete-btn");
+const ulEl = document.getElementById("ul-el");
+const tabBtn = document.getElementById("tab-btn");
+const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 
-function saveLead() {
-    text.textContent += input.value + " ";
+if (leadsFromLocalStorage) {
+    myLeads = leadsFromLocalStorage;
+    renderInput(myLeads);
 }
 
-let inputBtn = document.getElementById("input-btn");
-inputBtn.addEventListener("click", function() {
-    saveLead();
+function renderInput(leads) {
+    let listItems = "";
+    for (let i = 0; i < leads.length; i++) {
+        listItems +=
+            `<li>
+                <a target='_blank' href=' ${leads[i]}'>
+                    ${leads[i]} 
+                </a>
+            </li>`;
+    }
+
+    ulEl.innerHTML = listItems;
+}
+
+inputBtn.addEventListener("click", function () {
+    myLeads.push(inputEl.value);
+    inputEl.value = "";
+
+    localStorage.setItem("myLeads", JSON.stringify(myLeads));
+    renderInput(myLeads);
 });
 
+tabBtn.addEventListener("click", function () {
+
+    // chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    // });
+
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        myLeads.push(tabs[0].url);
+
+        localStorage.setItem("myLeads", JSON.stringify(myLeads));
+        renderInput(myLeads);
+    });
+
+
+});
+
+deleteBtn.addEventListener("dblclick", function () {
+    localStorage.clear();
+    myLeads = [];
+    renderInput(myLeads);
+});
 
